@@ -1,4 +1,3 @@
-local completions = require("completions")
 return {
 	{
 		"williamboman/mason.nvim",
@@ -21,7 +20,7 @@ return {
 
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
-				completions = completions,
+				capabilities = capabilities,
 			})
 			lspconfig.tsserver.setup({
 				capabilities = capabilities,
