@@ -4,4 +4,5 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.g.mapleader = " "
 vim.cmd("filetype indent on")
-vim.cmd("set relativenumber")
+vim.cmd("set number relativenumber")
+vim.cmd("set scrolloff=6")
