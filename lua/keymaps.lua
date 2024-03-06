@@ -13,7 +13,14 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- delete without saving to buffer
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- replace C-c with esc
 vim.keymap.set("i", "<C-c>", "<Esc>")
+
+-- copy to clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+-- delete without storing in buffer
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
