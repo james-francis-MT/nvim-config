@@ -6,3 +6,6 @@ vim.g.mapleader = " "
 vim.cmd("filetype indent on")
 vim.cmd("set number relativenumber")
 vim.cmd("set scrolloff=6")
+vim.cmd("set autoread")
+vim.cmd("au FocusLost,WinLeave * :silent! w")
+vim.cmd("au FocusGained,BufEnter * :silent! !")
