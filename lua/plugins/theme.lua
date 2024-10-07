@@ -1,8 +1,17 @@
+-- return {
+-- 	"catppuccin/nvim",
+-- 	name = "catppuccin",
+-- 	priority = 100,
+-- 	config = function()
+-- 		vim.cmd.colorscheme("catppuccin")
+-- 	end,
+-- }
+
 return {
-	"catppuccin/nvim",
-	name = "catppuccin",
-	priority = 100,
-	config = function()
-		vim.cmd.colorscheme("catppuccin")
-	end,
+    "rose-pine/neovim",
+    name = "rose-pine",
+    priority = 100,
+    config = function()
+        vim.cmd.colorscheme("rose-pine")
+    end
 }
