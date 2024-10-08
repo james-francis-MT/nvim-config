@@ -14,6 +14,8 @@ return {
                 null_ls.builtins.formatting.rubocop,
                 null_ls.builtins.diagnostics.ltrs,
                 null_ls.builtins.diagnostics.cppcheck,
+                null_ls.builtins.formatting.gofmt,
+                null_ls.builtins.formatting.goimports_reviser,
             },
         })
 
