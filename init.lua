@@ -4,8 +4,6 @@ vim.keymap.set("n", "∆", "<cmd>cnext<CR>")
 vim.keymap.set("n", "˚", "<cmd>cprev<CR>")
 vim.keymap.set("n", "-", "<cmd>Oil<CR>")
 
-
-
 vim.api.nvim_create_autocmd('TermOpen', {
   group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
   callback = function()
