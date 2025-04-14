@@ -34,24 +34,25 @@ return {
       require("lspconfig").tailwindcss.setup({ capabilities = capabilities })
       require("lspconfig").ts_ls.setup({ capabilities = capabilities })
 
-      vim.api.nvim_create_autocmd('LspAttach', {
-        callback = function(args)
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-          if not client then return end
-
-          if client:supports_method('textDocument/formatting') then
-            -- Format the current buffer on save
-            vim.api.nvim_create_autocmd('BufWritePre', {
-              buffer = args.buf,
-              callback = function()
-                vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-              end,
-            })
-          end
-        end,
-      })
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "gl", vim.diagnostic.open_float, {})
     end,
   },
+  {
+    'stevearc/conform.nvim',
+    opts = {},
+    config = function()
+      require("conform").setup({
+        format_on_save = {
+          -- These options will be passed to conform.format()
+          timeout_ms = 500,
+          lsp_format = "fallback",
+        },
+        formatters_by_ft = {
+          javascript = { "prettierd", "prettier", "eslint" },
+          typescript = { "prettierd", "prettier", "eslint" }
+        }
+      })
+    end
+  }
 }
