@@ -32,6 +32,7 @@ return {
       require("lspconfig").gopls.setup({ capabilites = capabilities })
       require("lspconfig").templ.setup({ capabilites = capabilities })
       require("lspconfig").tailwindcss.setup({ capabilities = capabilities })
+      require("lspconfig").ts_ls.setup({ capabilities = capabilities })
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
