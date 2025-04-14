@@ -24,11 +24,10 @@ return {
       },
     },
     config = function()
-      --[[
       require('lspconfig').util.default_config.on_init = function(client, _)
         client.server_capabilities.semanticTokensProvider = nil
       end
-      ]]
+
       require("mason").setup()
       require("mason-lspconfig").setup()
 
