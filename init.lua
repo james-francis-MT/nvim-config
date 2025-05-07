@@ -1,8 +1,14 @@
 require("config.lazy")
 
+-- Option j, k
 vim.keymap.set("n", "∆", "<cmd>cnext<CR>")
 vim.keymap.set("n", "˚", "<cmd>cprev<CR>")
-vim.keymap.set("n", "-", "<cmd>Oil<CR>")
+
+-- Rebind c-c to ecs
+vim.keymap.set("i", "<C-c>", "<Esc>")
+
+-- paste without overriding buffer
+vim.keymap.set("x", "<leader>p", [["_dP]])
 
 vim.api.nvim_create_autocmd('TermOpen', {
   group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
@@ -24,3 +30,4 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.o.termguicolors = true
 vim.diagnostic.config({ virtual_text = true })
+vim.opt.scrolloff = 10

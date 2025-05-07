@@ -38,6 +38,13 @@ return {
       require("lspconfig").tailwindcss.setup({ capabilities = capabilities })
       require("lspconfig").ts_ls.setup({ capabilities = capabilities })
 
+      require("lspconfig").jinja_lsp.setup({ capabilities = capabilities })
+      vim.filetype.add {
+        extension = {
+          njk = 'jinja'
+        },
+      }
+
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "gl", vim.diagnostic.open_float, {})
     end,
